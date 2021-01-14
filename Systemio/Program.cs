@@ -9,24 +9,25 @@ namespace Systemio
             int[] numArray = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
 
             //Challenge One
-            //Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
-            //string userInput = Console.ReadLine();
-            //Console.WriteLine(ChallengeOne(userInput));
+            Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
+            string userInput = Console.ReadLine();
+            Console.WriteLine(ChallengeOne(userInput));
             //
             //Challenge Two
-            //int[] createdIntArray = CreateNumArray();
-            //Console.WriteLine(ChallengeTwo(createdIntArray));
+            int[] createdIntArray = CreateNumArray();
+            Console.WriteLine(ChallengeTwo(createdIntArray));
             //
-            //ChallengeThree();
+            ChallengeThree();
             //
             //Challenge Four
-            //int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
-            //Console.WriteLine(ChallengeFour(findRepeat));
+            int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+            Console.WriteLine(ChallengeFour(findRepeat));
             //
-
-            //Console.WriteLine(ChallengeFive(numArray));
-            //ChallengeSix();
-            //ChallengeSeven();
+            // Challenge Five
+            Console.WriteLine(ChallengeFive(numArray));
+            //
+            ChallengeSix();
+            ChallengeSeven();
         }
 
         //Send to Mike.
@@ -121,6 +122,20 @@ namespace Systemio
                 }
             }
             return numArray;
+        }
+        static int ConvertStringToInt(string s)
+        {
+            int convertInt = 0;
+            try
+            {
+                return convertInt = int.Parse(s);
+            }
+
+            catch
+            {
+                Console.WriteLine("Unable to Parse Value. Zero Returned");
+                return convertInt;
+            }
         }
         public static void ChallengeThree()
         {
@@ -257,17 +272,17 @@ namespace Systemio
         public static void ChallengeSix()
         {
             Console.WriteLine("Please enter your most FAVORITE word");
-            string userInput = Console.ReadLine();
-            string path = @"E:\CodeFellows\401\Lab03-SystemIO\words.txt";
+            string userInput = "\n" + Console.ReadLine();
+            string path = "../words.txt";            
             if (!File.Exists(path)) { Console.WriteLine("All signs point to NOPE"); }
 
-            File.AppendAllText(path, userInput);
+            File.AppendAllText (path, userInput);
 
         }
 
         public static void ChallengeSeven()
         {
-            string path = @"E:\CodeFellows\401\Lab03-SystemIO\words.txt";
+            string path = "../words.txt";
             string[] lines = File.ReadAllLines(path);
             foreach (string s in lines)
             {
@@ -276,20 +291,6 @@ namespace Systemio
         }
 
 
-        static int ConvertStringToInt(string s)
-        {
-            int convertInt = 0;
-            try
-            {
-                return convertInt = int.Parse(s);
-            }
-
-            catch
-            {
-                Console.WriteLine("Unable to Parse Value. Zero Returned");
-                return convertInt;
-            }
-        }
     }
 }
 

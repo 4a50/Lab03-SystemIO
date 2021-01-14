@@ -8,9 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LAB3 Tests", "LAB3 Tests\LAB3 Tests.csproj", "{24127AE6-87C1-4295-AD5A-82D07B29849A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4A81959-D819-41A7-A564-A13929C453C4}"
-	ProjectSection(SolutionItems) = preProject
-		words.txt = words.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

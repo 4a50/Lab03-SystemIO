@@ -101,6 +101,22 @@ namespace LAB3_Tests
         }
 
     }
+    public class ChallengeFiveTests
+    {
+        [Fact]
+        public static void ChallengeFiveMaxValue ()
+        {
+            int[] value = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+            Assert.Equal(555, Program.ChallengeFive(value));
+        }
+        [Fact]
+        public static void ChallengeFiveAllValuesSame()
+        {
+            int[] value = new int[] { 5, 5, 5, 5, 5, 5, 5 };
+            Assert.Equal(5, Program.ChallengeFive(value));
+        }
+
+    }
 
 }
 
