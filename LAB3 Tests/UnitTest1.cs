@@ -117,6 +117,11 @@ namespace LAB3_Tests
         }
 
     }
+    public class ChallengeNineTests
+    {
+        [Fact]
+        public static void 
+    }
 
 }
 
