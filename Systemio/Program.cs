@@ -2,35 +2,37 @@
 using System.IO;
 namespace Systemio
 {
+ 
     public class Program
     {
         public static void Main(string[] args)
         {
-            int[] numArray = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
+            //int[] numArray = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
 
-            //Challenge One
-            Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
-            string userInput = Console.ReadLine();
-            Console.WriteLine(ChallengeOne(userInput));
-            //
-            //Challenge Two
-            int[] createdIntArray = CreateNumArray();
-            Console.WriteLine(ChallengeTwo(createdIntArray));
-            //
-            ChallengeThree();
-            //
-            //Challenge Four
-            int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
-            Console.WriteLine(ChallengeFour(findRepeat));
-            //
-            // Challenge Five
-            Console.WriteLine(ChallengeFive(numArray));
-            //
-            ChallengeSix();
-            ChallengeSeven();
+            ////Challenge One
+            //Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
+            //string userInput = Console.ReadLine();
+            //Console.WriteLine(ChallengeOne(userInput));
+            ////
+            ////Challenge Two
+            //int[] createdIntArray = CreateNumArray();
+            //Console.WriteLine(ChallengeTwo(createdIntArray));
+            ////
+            //ChallengeThree();
+            ////
+            ////Challenge Four
+            //int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+            //Console.WriteLine(ChallengeFour(findRepeat));
+            ////
+            //// Challenge Five
+            //Console.WriteLine(ChallengeFive(numArray));
+            ////
+            //ChallengeSix();
+            //ChallengeSeven();
+            ChallengeEight();
         }
 
-        //Send to Mike.
+        //Mike.
         public static int ChallengeOne(string userInput)
         {
 
@@ -61,13 +63,10 @@ namespace Systemio
             return product;
         }
 
+        //Kjell
         public static int ChallengeTwo(int[] numArray)
         {
             int sum = 0;
-
-
-
-            //FunctionStart?
 
             foreach (int n in numArray)
             {
@@ -76,12 +75,11 @@ namespace Systemio
             if (sum == 0) { return 0; }
             else { return sum / numArray.Length; }
 
-        }
+        }        
         public static int[] CreateNumArray()
         {
             bool isEnough = false;
             int userNum = 0;
-
 
             while (!isEnough)
             {
@@ -137,6 +135,7 @@ namespace Systemio
                 return convertInt;
             }
         }
+        //Matt
         public static void ChallengeThree()
         {
             //Worked with Matt
@@ -222,7 +221,7 @@ namespace Systemio
             }
 
         }
-
+        //Kjell
         public static int ChallengeFour(int[] intArr)
         {
             //Completed with Kjell
@@ -252,7 +251,7 @@ namespace Systemio
 
             return intArr[mostRepeatedIdx];
         }
-
+        //David
         public static int ChallengeFive(int[] numArray)
         {
             // Worked With David
@@ -268,18 +267,16 @@ namespace Systemio
             }
             return highestValue;
         }
-
+        //Jordan
         public static void ChallengeSix()
         {
             Console.WriteLine("Please enter your most FAVORITE word");
             string userInput = "\n" + Console.ReadLine();
             string path = "../words.txt";            
-            if (!File.Exists(path)) { Console.WriteLine("All signs point to NOPE"); }
-
             File.AppendAllText (path, userInput);
 
         }
-
+        //Jordan
         public static void ChallengeSeven()
         {
             string path = "../words.txt";
@@ -288,6 +285,25 @@ namespace Systemio
             {
                 Console.WriteLine(s);
             }
+        }
+        //Solo
+        public static void ChallengeEight()
+        {
+            string path = "../words.txt";
+            string[] line = File.ReadAllLines(path);
+            int lineToRemove = 1;
+            string[] removedLine = new string[line.Length - 1];
+            int counter = 0;
+            for (int i = 0; i < line.Length; i++)
+            {
+                if (i != lineToRemove)
+                {
+                    removedLine[counter] = line[i];
+                    counter++;
+                }
+            }
+                File.WriteAllLines(path, removedLine);
+                File.WriteAllLines(path, line);
         }
 
 
