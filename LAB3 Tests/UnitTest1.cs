@@ -120,7 +120,17 @@ namespace LAB3_Tests
     public class ChallengeNineTests
     {
         [Fact]
-        public static void 
+        public static void ChallengeNineStringOutput()
+        {
+            //1. Input a sentance, and it returns the correct array 
+            string testSentence = "My Name is Kilroy";
+            string[] expectedArray = new string[] { "My: 2", "Name: 4", "is: 2", "Kilroy: 6" };
+
+            Assert.Equal(expectedArray, Program.ChallengeNine(testSentence));
+
+            //2. Inut a sentance and confirm it returns an array 
+            //3. Use different sentances with differnt symbols
+        }
     }
 
 }
