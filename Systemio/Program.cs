@@ -9,27 +9,35 @@ namespace Systemio
         {
             int[] numArray = new int[] { 5, 25, 99, 123, 78, 96, 555, 108, 4 };
 
-            //Challenge One
-            Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
-            string userInput = Console.ReadLine();
-            Console.WriteLine(ChallengeOne(userInput));
+            ////Challenge One
+            //Console.WriteLine("Please Enter 3 Numbers (Separated by a ','):");
+            //string userInput = Console.ReadLine();
+            //Console.WriteLine(ChallengeOne(userInput));
+            ////
+            ////Challenge Two
+            //int[] createdIntArray = CreateNumArray();
+            //Console.WriteLine(ChallengeTwo(createdIntArray));
+            ////
+            //ChallengeThree();
+            ////
+            ////Challenge Four
+            //int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
+            //Console.WriteLine(ChallengeFour(findRepeat));
+            ////
+            //// Challenge Five
+            //Console.WriteLine(ChallengeFive(numArray));
+            ////
+            //ChallengeSix();
+            //ChallengeSeven();
+            //ChallengeEight();
+            ////Challenge Nine
+            string[] sentenceArray = ChallengeNine("To boldy go where no one has gone before");
+            foreach (string s in sentenceArray)
+            {
+                Console.Write($"{s} ");
+            }
+            Console.WriteLine();
             //
-            //Challenge Two
-            int[] createdIntArray = CreateNumArray();
-            Console.WriteLine(ChallengeTwo(createdIntArray));
-            //
-            ChallengeThree();
-            //
-            //Challenge Four
-            int[] findRepeat = new int[] { 1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1 };
-            Console.WriteLine(ChallengeFour(findRepeat));
-            //
-            // Challenge Five
-            Console.WriteLine(ChallengeFive(numArray));
-            //
-            ChallengeSix();
-            ChallengeSeven();
-            ChallengeEight();
         }
 
         //Mike.
@@ -306,9 +314,16 @@ namespace Systemio
                 File.WriteAllLines(path, line);
         }
         //Solo
-        public static void ChallengeNine()
+        public static string[] ChallengeNine(string sentence)
         {
-
+            //Write a method that asks the user to input a sentence and returns an array that with the word and the number of characters each word has:
+            string[] sentenceArray = sentence.Split(' ');
+            string[] returnStringArray = new string[sentenceArray.Length];
+            for (int i = 0; i < sentenceArray.Length; i++)
+            {
+                returnStringArray[i] = $"{sentenceArray[i]}: {sentenceArray[i].Length}";
+            }
+            return returnStringArray;
         }
 
     }
